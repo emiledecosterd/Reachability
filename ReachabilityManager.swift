@@ -8,6 +8,9 @@
 
 import Foundation
 
+// If we use notification
+let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
+
 class ReachabilityManager: Reachable {
   
   var reachability: AAPLReachability
@@ -22,9 +25,6 @@ class ReachabilityManager: Reachable {
   
   // If we use the class with delegate pattern
   var delegate: ReachabilityDelegate?
-  
-  // If we use the notifications
-  let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
   
   init(){
     reachability = AAPLReachability.reachabilityForInternetConnection()
@@ -44,7 +44,7 @@ class ReachabilityManager: Reachable {
     reachability.startNotifier()
   }
   
-  @objc func reachabilityChanged(notification: NSNotification){
+  @objc private func reachabilityChanged(notification: NSNotification){
     reachability = notification.object as! AAPLReachability
     let networkStatus = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
     

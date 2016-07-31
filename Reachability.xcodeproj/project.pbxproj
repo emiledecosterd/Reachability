@@ -18,6 +18,11 @@
 		623C6DD41D4E4EBC00DAF1C4 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */; };
 		623C6DD71D4E4EDD00DAF1C4 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DD61D4E4EDD00DAF1C4 /* Protocols.swift */; };
 		623C6DD91D4E5B1500DAF1C4 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DD81D4E5B1500DAF1C4 /* NetworkStatus.swift */; };
+		62E750E31D4E868100E5F240 /* ReachabilityBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E750E21D4E868100E5F240 /* ReachabilityBannerView.xib */; };
+		62E750E51D4E898200E5F240 /* ReachabilityBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750E41D4E898200E5F240 /* ReachabilityBannerView.swift */; };
+		62E750E81D4E8B7E00E5F240 /* String+EDE_additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750E71D4E8B7E00E5F240 /* String+EDE_additions.swift */; };
+		62E750EB1D4E8C5900E5F240 /* ReachabilityBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */; };
+		62E750EE1D4E91F900E5F240 /* ReachabilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750ED1D4E91F900E5F240 /* ReachabilityController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +59,14 @@
 		623C6DCE1D4E4CD500DAF1C4 /* Reachability-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability-Bridging-Header.h"; sourceTree = "<group>"; };
 		623C6DCF1D4E4CD600DAF1C4 /* AAPLReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLReachability.h; sourceTree = "<group>"; };
 		623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLReachability.m; sourceTree = "<group>"; };
-		623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = SOURCE_ROOT; };
 		623C6DD61D4E4EDD00DAF1C4 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		623C6DD81D4E5B1500DAF1C4 /* NetworkStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
+		62E750E21D4E868100E5F240 /* ReachabilityBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReachabilityBannerView.xib; sourceTree = "<group>"; };
+		62E750E41D4E898200E5F240 /* ReachabilityBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityBannerView.swift; sourceTree = "<group>"; };
+		62E750E71D4E8B7E00E5F240 /* String+EDE_additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EDE_additions.swift"; sourceTree = "<group>"; };
+		62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityBanner.swift; sourceTree = "<group>"; };
+		62E750ED1D4E91F900E5F240 /* ReachabilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				623C6DCE1D4E4CD500DAF1C4 /* Reachability-Bridging-Header.h */,
-				623C6DCD1D4E4CAF00DAF1C4 /* AAPL */,
-				623C6DD51D4E4ECB00DAF1C4 /* Miscellaneous */,
-				623C6DD21D4E4DC000DAF1C4 /* Manager */,
 				623C6D9E1D4E4CA100DAF1C4 /* Reachability */,
 				623C6DB31D4E4CA100DAF1C4 /* ReachabilityTests */,
 				623C6DBE1D4E4CA100DAF1C4 /* ReachabilityUITests */,
@@ -111,6 +118,10 @@
 		623C6D9E1D4E4CA100DAF1C4 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
+				623C6DD51D4E4ECB00DAF1C4 /* Miscellaneous */,
+				62E750E91D4E8C4C00E5F240 /* Model */,
+				62E750E11D4E865500E5F240 /* Views */,
+				62E750EC1D4E91B200E5F240 /* Controllers */,
 				623C6D9F1D4E4CA100DAF1C4 /* AppDelegate.swift */,
 				623C6DA11D4E4CA100DAF1C4 /* ViewController.swift */,
 				623C6DA31D4E4CA100DAF1C4 /* Main.storyboard */,
@@ -146,23 +157,53 @@
 				623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */,
 			);
 			name = AAPL;
-			sourceTree = "<group>";
-		};
-		623C6DD21D4E4DC000DAF1C4 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */,
-			);
-			name = Manager;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		623C6DD51D4E4ECB00DAF1C4 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
+				62E750E61D4E8B6800E5F240 /* Categories */,
 				623C6DD61D4E4EDD00DAF1C4 /* Protocols.swift */,
 				623C6DD81D4E5B1500DAF1C4 /* NetworkStatus.swift */,
 			);
 			name = Miscellaneous;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		62E750E11D4E865500E5F240 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				62E750E21D4E868100E5F240 /* ReachabilityBannerView.xib */,
+				62E750E41D4E898200E5F240 /* ReachabilityBannerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		62E750E61D4E8B6800E5F240 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				62E750E71D4E8B7E00E5F240 /* String+EDE_additions.swift */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		62E750E91D4E8C4C00E5F240 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				623C6DCD1D4E4CAF00DAF1C4 /* AAPL */,
+				62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */,
+				623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		62E750EC1D4E91B200E5F240 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				62E750ED1D4E91F900E5F240 /* ReachabilityController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				623C6DAA1D4E4CA100DAF1C4 /* LaunchScreen.storyboard in Resources */,
+				62E750E31D4E868100E5F240 /* ReachabilityBannerView.xib in Resources */,
 				623C6DA71D4E4CA100DAF1C4 /* Assets.xcassets in Resources */,
 				623C6DA51D4E4CA100DAF1C4 /* Main.storyboard in Resources */,
 			);
@@ -299,7 +341,11 @@
 				623C6DD71D4E4EDD00DAF1C4 /* Protocols.swift in Sources */,
 				623C6DD41D4E4EBC00DAF1C4 /* ReachabilityManager.swift in Sources */,
 				623C6DA21D4E4CA100DAF1C4 /* ViewController.swift in Sources */,
+				62E750E81D4E8B7E00E5F240 /* String+EDE_additions.swift in Sources */,
+				62E750EE1D4E91F900E5F240 /* ReachabilityController.swift in Sources */,
 				623C6DA01D4E4CA100DAF1C4 /* AppDelegate.swift in Sources */,
+				62E750EB1D4E8C5900E5F240 /* ReachabilityBanner.swift in Sources */,
+				62E750E51D4E898200E5F240 /* ReachabilityBannerView.swift in Sources */,
 				623C6DD91D4E5B1500DAF1C4 /* NetworkStatus.swift in Sources */,
 				623C6DD11D4E4CD600DAF1C4 /* AAPLReachability.m in Sources */,
 			);
@@ -533,6 +579,7 @@
 				623C6DC61D4E4CA100DAF1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		623C6DC71D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "ReachabilityTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +588,7 @@
 				623C6DC91D4E4CA100DAF1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		623C6DCA1D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "ReachabilityUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +597,7 @@
 				623C6DCC1D4E4CA100DAF1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
