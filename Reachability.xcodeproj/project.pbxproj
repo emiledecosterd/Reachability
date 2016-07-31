@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		623C6DA01D4E4CA100DAF1C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6D9F1D4E4CA100DAF1C4 /* AppDelegate.swift */; };
+		623C6DA21D4E4CA100DAF1C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DA11D4E4CA100DAF1C4 /* ViewController.swift */; };
+		623C6DA51D4E4CA100DAF1C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 623C6DA31D4E4CA100DAF1C4 /* Main.storyboard */; };
+		623C6DA71D4E4CA100DAF1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623C6DA61D4E4CA100DAF1C4 /* Assets.xcassets */; };
+		623C6DAA1D4E4CA100DAF1C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 623C6DA81D4E4CA100DAF1C4 /* LaunchScreen.storyboard */; };
+		623C6DB51D4E4CA100DAF1C4 /* ReachabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DB41D4E4CA100DAF1C4 /* ReachabilityTests.swift */; };
+		623C6DC01D4E4CA100DAF1C4 /* ReachabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DBF1D4E4CA100DAF1C4 /* ReachabilityUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		623C6DB11D4E4CA100DAF1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 623C6D941D4E4CA100DAF1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 623C6D9B1D4E4CA100DAF1C4;
+			remoteInfo = Reachability;
+		};
+		623C6DBC1D4E4CA100DAF1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 623C6D941D4E4CA100DAF1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 623C6D9B1D4E4CA100DAF1C4;
+			remoteInfo = Reachability;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		623C6D9C1D4E4CA100DAF1C4 /* Reachability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reachability.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		623C6D9F1D4E4CA100DAF1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		623C6DA11D4E4CA100DAF1C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		623C6DA41D4E4CA100DAF1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		623C6DA61D4E4CA100DAF1C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		623C6DA91D4E4CA100DAF1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		623C6DAB1D4E4CA100DAF1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		623C6DB01D4E4CA100DAF1C4 /* ReachabilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReachabilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		623C6DB41D4E4CA100DAF1C4 /* ReachabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityTests.swift; sourceTree = "<group>"; };
+		623C6DB61D4E4CA100DAF1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		623C6DBB1D4E4CA100DAF1C4 /* ReachabilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReachabilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		623C6DBF1D4E4CA100DAF1C4 /* ReachabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityUITests.swift; sourceTree = "<group>"; };
+		623C6DC11D4E4CA100DAF1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		623C6D991D4E4CA100DAF1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		623C6DAD1D4E4CA100DAF1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		623C6DB81D4E4CA100DAF1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		623C6D931D4E4CA100DAF1C4 = {
+			isa = PBXGroup;
+			children = (
+				623C6D9E1D4E4CA100DAF1C4 /* Reachability */,
+				623C6DB31D4E4CA100DAF1C4 /* ReachabilityTests */,
+				623C6DBE1D4E4CA100DAF1C4 /* ReachabilityUITests */,
+				623C6D9D1D4E4CA100DAF1C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		623C6D9D1D4E4CA100DAF1C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				623C6D9C1D4E4CA100DAF1C4 /* Reachability.app */,
+				623C6DB01D4E4CA100DAF1C4 /* ReachabilityTests.xctest */,
+				623C6DBB1D4E4CA100DAF1C4 /* ReachabilityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		623C6D9E1D4E4CA100DAF1C4 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				623C6D9F1D4E4CA100DAF1C4 /* AppDelegate.swift */,
+				623C6DA11D4E4CA100DAF1C4 /* ViewController.swift */,
+				623C6DA31D4E4CA100DAF1C4 /* Main.storyboard */,
+				623C6DA61D4E4CA100DAF1C4 /* Assets.xcassets */,
+				623C6DA81D4E4CA100DAF1C4 /* LaunchScreen.storyboard */,
+				623C6DAB1D4E4CA100DAF1C4 /* Info.plist */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		623C6DB31D4E4CA100DAF1C4 /* ReachabilityTests */ = {
+			isa = PBXGroup;
+			children = (
+				623C6DB41D4E4CA100DAF1C4 /* ReachabilityTests.swift */,
+				623C6DB61D4E4CA100DAF1C4 /* Info.plist */,
+			);
+			path = ReachabilityTests;
+			sourceTree = "<group>";
+		};
+		623C6DBE1D4E4CA100DAF1C4 /* ReachabilityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				623C6DBF1D4E4CA100DAF1C4 /* ReachabilityUITests.swift */,
+				623C6DC11D4E4CA100DAF1C4 /* Info.plist */,
+			);
+			path = ReachabilityUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		623C6D9B1D4E4CA100DAF1C4 /* Reachability */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 623C6DC41D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "Reachability" */;
+			buildPhases = (
+				623C6D981D4E4CA100DAF1C4 /* Sources */,
+				623C6D991D4E4CA100DAF1C4 /* Frameworks */,
+				623C6D9A1D4E4CA100DAF1C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Reachability;
+			productName = Reachability;
+			productReference = 623C6D9C1D4E4CA100DAF1C4 /* Reachability.app */;
+			productType = "com.apple.product-type.application";
+		};
+		623C6DAF1D4E4CA100DAF1C4 /* ReachabilityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 623C6DC71D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "ReachabilityTests" */;
+			buildPhases = (
+				623C6DAC1D4E4CA100DAF1C4 /* Sources */,
+				623C6DAD1D4E4CA100DAF1C4 /* Frameworks */,
+				623C6DAE1D4E4CA100DAF1C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				623C6DB21D4E4CA100DAF1C4 /* PBXTargetDependency */,
+			);
+			name = ReachabilityTests;
+			productName = ReachabilityTests;
+			productReference = 623C6DB01D4E4CA100DAF1C4 /* ReachabilityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		623C6DBA1D4E4CA100DAF1C4 /* ReachabilityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 623C6DCA1D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "ReachabilityUITests" */;
+			buildPhases = (
+				623C6DB71D4E4CA100DAF1C4 /* Sources */,
+				623C6DB81D4E4CA100DAF1C4 /* Frameworks */,
+				623C6DB91D4E4CA100DAF1C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				623C6DBD1D4E4CA100DAF1C4 /* PBXTargetDependency */,
+			);
+			name = ReachabilityUITests;
+			productName = ReachabilityUITests;
+			productReference = 623C6DBB1D4E4CA100DAF1C4 /* ReachabilityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		623C6D941D4E4CA100DAF1C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Emile Décosterd";
+				TargetAttributes = {
+					623C6D9B1D4E4CA100DAF1C4 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					623C6DAF1D4E4CA100DAF1C4 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 623C6D9B1D4E4CA100DAF1C4;
+					};
+					623C6DBA1D4E4CA100DAF1C4 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 623C6D9B1D4E4CA100DAF1C4;
+					};
+				};
+			};
+			buildConfigurationList = 623C6D971D4E4CA100DAF1C4 /* Build configuration list for PBXProject "Reachability" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 623C6D931D4E4CA100DAF1C4;
+			productRefGroup = 623C6D9D1D4E4CA100DAF1C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				623C6D9B1D4E4CA100DAF1C4 /* Reachability */,
+				623C6DAF1D4E4CA100DAF1C4 /* ReachabilityTests */,
+				623C6DBA1D4E4CA100DAF1C4 /* ReachabilityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		623C6D9A1D4E4CA100DAF1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				623C6DAA1D4E4CA100DAF1C4 /* LaunchScreen.storyboard in Resources */,
+				623C6DA71D4E4CA100DAF1C4 /* Assets.xcassets in Resources */,
+				623C6DA51D4E4CA100DAF1C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		623C6DAE1D4E4CA100DAF1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		623C6DB91D4E4CA100DAF1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		623C6D981D4E4CA100DAF1C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				623C6DA21D4E4CA100DAF1C4 /* ViewController.swift in Sources */,
+				623C6DA01D4E4CA100DAF1C4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		623C6DAC1D4E4CA100DAF1C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				623C6DB51D4E4CA100DAF1C4 /* ReachabilityTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		623C6DB71D4E4CA100DAF1C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				623C6DC01D4E4CA100DAF1C4 /* ReachabilityUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		623C6DB21D4E4CA100DAF1C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 623C6D9B1D4E4CA100DAF1C4 /* Reachability */;
+			targetProxy = 623C6DB11D4E4CA100DAF1C4 /* PBXContainerItemProxy */;
+		};
+		623C6DBD1D4E4CA100DAF1C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 623C6D9B1D4E4CA100DAF1C4 /* Reachability */;
+			targetProxy = 623C6DBC1D4E4CA100DAF1C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		623C6DA31D4E4CA100DAF1C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				623C6DA41D4E4CA100DAF1C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		623C6DA81D4E4CA100DAF1C4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				623C6DA91D4E4CA100DAF1C4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		623C6DC21D4E4CA100DAF1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		623C6DC31D4E4CA100DAF1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		623C6DC51D4E4CA100DAF1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Reachability/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.Reachability";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		623C6DC61D4E4CA100DAF1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Reachability/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.Reachability";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		623C6DC81D4E4CA100DAF1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ReachabilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.ReachabilityTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reachability.app/Reachability";
+			};
+			name = Debug;
+		};
+		623C6DC91D4E4CA100DAF1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ReachabilityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.ReachabilityTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reachability.app/Reachability";
+			};
+			name = Release;
+		};
+		623C6DCB1D4E4CA100DAF1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReachabilityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.ReachabilityUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Reachability;
+			};
+			name = Debug;
+		};
+		623C6DCC1D4E4CA100DAF1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReachabilityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.ReachabilityUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Reachability;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		623C6D971D4E4CA100DAF1C4 /* Build configuration list for PBXProject "Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				623C6DC21D4E4CA100DAF1C4 /* Debug */,
+				623C6DC31D4E4CA100DAF1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		623C6DC41D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				623C6DC51D4E4CA100DAF1C4 /* Debug */,
+				623C6DC61D4E4CA100DAF1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		623C6DC71D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "ReachabilityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				623C6DC81D4E4CA100DAF1C4 /* Debug */,
+				623C6DC91D4E4CA100DAF1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		623C6DCA1D4E4CA100DAF1C4 /* Build configuration list for PBXNativeTarget "ReachabilityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				623C6DCB1D4E4CA100DAF1C4 /* Debug */,
+				623C6DCC1D4E4CA100DAF1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 623C6D941D4E4CA100DAF1C4 /* Project object */;
+}
