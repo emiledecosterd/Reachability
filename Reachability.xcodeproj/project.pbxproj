@@ -14,6 +14,7 @@
 		623C6DAA1D4E4CA100DAF1C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 623C6DA81D4E4CA100DAF1C4 /* LaunchScreen.storyboard */; };
 		623C6DB51D4E4CA100DAF1C4 /* ReachabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DB41D4E4CA100DAF1C4 /* ReachabilityTests.swift */; };
 		623C6DC01D4E4CA100DAF1C4 /* ReachabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DBF1D4E4CA100DAF1C4 /* ReachabilityUITests.swift */; };
+		623C6DD11D4E4CD600DAF1C4 /* AAPLReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		623C6DBB1D4E4CA100DAF1C4 /* ReachabilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReachabilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		623C6DBF1D4E4CA100DAF1C4 /* ReachabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityUITests.swift; sourceTree = "<group>"; };
 		623C6DC11D4E4CA100DAF1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		623C6DCE1D4E4CD500DAF1C4 /* Reachability-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability-Bridging-Header.h"; sourceTree = "<group>"; };
+		623C6DCF1D4E4CD600DAF1C4 /* AAPLReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLReachability.h; sourceTree = "<group>"; };
+		623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLReachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		623C6D931D4E4CA100DAF1C4 = {
 			isa = PBXGroup;
 			children = (
+				623C6DCD1D4E4CAF00DAF1C4 /* AAPL */,
 				623C6D9E1D4E4CA100DAF1C4 /* Reachability */,
 				623C6DB31D4E4CA100DAF1C4 /* ReachabilityTests */,
 				623C6DBE1D4E4CA100DAF1C4 /* ReachabilityUITests */,
@@ -123,6 +128,16 @@
 				623C6DC11D4E4CA100DAF1C4 /* Info.plist */,
 			);
 			path = ReachabilityUITests;
+			sourceTree = "<group>";
+		};
+		623C6DCD1D4E4CAF00DAF1C4 /* AAPL */ = {
+			isa = PBXGroup;
+			children = (
+				623C6DCF1D4E4CD600DAF1C4 /* AAPLReachability.h */,
+				623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */,
+				623C6DCE1D4E4CD500DAF1C4 /* Reachability-Bridging-Header.h */,
+			);
+			name = AAPL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +273,7 @@
 			files = (
 				623C6DA21D4E4CA100DAF1C4 /* ViewController.swift in Sources */,
 				623C6DA01D4E4CA100DAF1C4 /* AppDelegate.swift in Sources */,
+				623C6DD11D4E4CD600DAF1C4 /* AAPLReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +417,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Reachability/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.Reachability";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reachability-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -412,10 +431,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Reachability/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ED-automation.Reachability";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reachability-Bridging-Header.h";
 			};
 			name = Release;
 		};
