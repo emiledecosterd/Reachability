@@ -11,7 +11,11 @@ import Foundation
 class ReachabilityManager: Reachable {
   
   var reachability: AAPLReachability
+  
   var wifiOnly: Bool = false
+  var isOnWifi: Bool {
+    return reachability.currentReachabilityStatus() == ReachableViaWiFi
+  }
   
   // If we want to use it as a singleton
   static var sharedManager = ReachabilityManager()
@@ -48,10 +52,4 @@ class ReachabilityManager: Reachable {
     
   }
   
-}
-
-extension ReachabilityManager {
-  var isOnWifi: Bool {
-    return reachability.currentReachabilityStatus() == ReachableViaWiFi
-  }
 }
