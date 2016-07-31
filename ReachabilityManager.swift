@@ -30,6 +30,11 @@ class ReachabilityManager: Reachable {
     reachability = AAPLReachability.reachabilityForInternetConnection()
   }
   
+  convenience init(wifiOnly: Bool){
+    self.init()
+    self.wifiOnly = wifiOnly
+  }
+  
   deinit{
     NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
   }
