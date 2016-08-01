@@ -14,7 +14,8 @@ let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
 public class ReachabilityManager: Reachable {
   
   var reachability: AAPLReachability
-  public var status: NetworkStatus! // Call only if startMonitoring has been called!
+  // Call only if startMonitoring has been called!
+  public var status: NetworkStatus!
   
   public var wifiOnly: Bool = false
   public var isOnWifi: Bool {

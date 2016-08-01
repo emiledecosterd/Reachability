@@ -18,8 +18,8 @@
 		623C6DD41D4E4EBC00DAF1C4 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */; };
 		623C6DD71D4E4EDD00DAF1C4 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DD61D4E4EDD00DAF1C4 /* Protocols.swift */; };
 		623C6DD91D4E5B1500DAF1C4 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C6DD81D4E5B1500DAF1C4 /* NetworkStatus.swift */; };
-		62E750E31D4E868100E5F240 /* ReachabilityBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E750E21D4E868100E5F240 /* ReachabilityBannerView.xib */; };
-		62E750E51D4E898200E5F240 /* ReachabilityBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750E41D4E898200E5F240 /* ReachabilityBannerView.swift */; };
+		62E750E31D4E868100E5F240 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E750E21D4E868100E5F240 /* BannerView.xib */; };
+		62E750E51D4E898200E5F240 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750E41D4E898200E5F240 /* BannerView.swift */; };
 		62E750E81D4E8B7E00E5F240 /* String+EDE_additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750E71D4E8B7E00E5F240 /* String+EDE_additions.swift */; };
 		62E750EB1D4E8C5900E5F240 /* ReachabilityBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */; };
 		62E750EE1D4E91F900E5F240 /* ReachabilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E750ED1D4E91F900E5F240 /* ReachabilityController.swift */; };
@@ -62,8 +62,8 @@
 		623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = SOURCE_ROOT; };
 		623C6DD61D4E4EDD00DAF1C4 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		623C6DD81D4E5B1500DAF1C4 /* NetworkStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
-		62E750E21D4E868100E5F240 /* ReachabilityBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReachabilityBannerView.xib; sourceTree = "<group>"; };
-		62E750E41D4E898200E5F240 /* ReachabilityBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityBannerView.swift; sourceTree = "<group>"; };
+		62E750E21D4E868100E5F240 /* BannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
+		62E750E41D4E898200E5F240 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		62E750E71D4E8B7E00E5F240 /* String+EDE_additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EDE_additions.swift"; sourceTree = "<group>"; };
 		62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityBanner.swift; sourceTree = "<group>"; };
 		62E750ED1D4E91F900E5F240 /* ReachabilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityController.swift; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 		62E750E11D4E865500E5F240 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				62E750E21D4E868100E5F240 /* ReachabilityBannerView.xib */,
-				62E750E41D4E898200E5F240 /* ReachabilityBannerView.swift */,
+				62E750E21D4E868100E5F240 /* BannerView.xib */,
+				62E750E41D4E898200E5F240 /* BannerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				623C6DAA1D4E4CA100DAF1C4 /* LaunchScreen.storyboard in Resources */,
-				62E750E31D4E868100E5F240 /* ReachabilityBannerView.xib in Resources */,
+				62E750E31D4E868100E5F240 /* BannerView.xib in Resources */,
 				623C6DA71D4E4CA100DAF1C4 /* Assets.xcassets in Resources */,
 				623C6DA51D4E4CA100DAF1C4 /* Main.storyboard in Resources */,
 			);
@@ -345,7 +345,7 @@
 				62E750EE1D4E91F900E5F240 /* ReachabilityController.swift in Sources */,
 				623C6DA01D4E4CA100DAF1C4 /* AppDelegate.swift in Sources */,
 				62E750EB1D4E8C5900E5F240 /* ReachabilityBanner.swift in Sources */,
-				62E750E51D4E898200E5F240 /* ReachabilityBannerView.swift in Sources */,
+				62E750E51D4E898200E5F240 /* BannerView.swift in Sources */,
 				623C6DD91D4E5B1500DAF1C4 /* NetworkStatus.swift in Sources */,
 				623C6DD11D4E4CD600DAF1C4 /* AAPLReachability.m in Sources */,
 			);

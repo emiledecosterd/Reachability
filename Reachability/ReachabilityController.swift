@@ -14,7 +14,7 @@ public final class ReachabilityController {
   private var reachabilityManager: ReachabilityManager
   
   // The banner view and the corresponding model
-  private let bannerView: ReachabilityBannerView
+  private let bannerView: BannerView
   private var banner: ReachabilityBanner!{
     didSet{
       print("Show banner should be executed")
@@ -33,7 +33,7 @@ public final class ReachabilityController {
     // Setup views
     self.view = view
     let bannerViewFrame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 0)
-    bannerView = ReachabilityBannerView(frame: bannerViewFrame)
+    bannerView = BannerView(frame: bannerViewFrame)
     
     // Setup manager
     reachabilityManager = ReachabilityManager()

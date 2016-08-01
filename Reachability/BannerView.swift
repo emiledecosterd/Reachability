@@ -8,25 +8,25 @@
 
 import UIKit
 
-class ReachabilityBannerView: UIView {
+class BannerView: UIView {
   
   // GUI
   @IBOutlet var view: UIView!
-  @IBOutlet weak var statusInfoLabel: UILabel!
+  @IBOutlet weak var infoLabel: UILabel!
   
   
   // Initialisation
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    NSBundle.mainBundle().loadNibNamed("ReachabilityBannerView", owner: self, options: nil)
+    NSBundle.mainBundle().loadNibNamed("BannerView", owner: self, options: nil)
     addSubview(self.view)
     self.view.layoutIfNeeded()
   }
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    NSBundle.mainBundle().loadNibNamed("ReachabilityBannerView", owner: self, options: nil)
+    NSBundle.mainBundle().loadNibNamed("BannerView", owner: self, options: nil)
     self.view.frame = frame
     addSubview(self.view)
     self.view.layoutIfNeeded()
@@ -39,10 +39,10 @@ class ReachabilityBannerView: UIView {
   
   // Setup
   
-  func setupView(banner: ReachabilityBanner){
+  func setupView(color: UIColor, message: String){
     
-    view.backgroundColor = banner.color
-    statusInfoLabel.text = banner.message
+    view.backgroundColor = color
+    infoLabel.text = message
     
     // Blur effect
     let blurEffect = UIBlurEffect(style: .Light)
@@ -74,4 +74,11 @@ class ReachabilityBannerView: UIView {
     // Implement to draw a border
   }
   
+}
+
+
+extension BannerView{
+  func setupView(banner: ReachabilityBanner){
+    setupView(banner.color, message: banner.message)
+  }
 }
