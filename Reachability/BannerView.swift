@@ -14,6 +14,8 @@ class BannerView: UIView {
   @IBOutlet var view: UIView!
   @IBOutlet weak var infoLabel: UILabel!
   
+  // Properties
+  var setup: Bool = false
   
   // Initialisation
   required init?(coder aDecoder: NSCoder) {
@@ -44,22 +46,26 @@ class BannerView: UIView {
     view.backgroundColor = color
     infoLabel.text = message
     
-    // Blur effect
-    let blurEffect = UIBlurEffect(style: .Light)
-    let blurView = UIVisualEffectView(effect: blurEffect)
-    blurView.translatesAutoresizingMaskIntoConstraints = false
-    view.insertSubview(blurView, atIndex: 0)
+    if !setup {
+      // Blur effect
+      let blurEffect = UIBlurEffect(style: .Light)
+      let blurView = UIVisualEffectView(effect: blurEffect)
+      blurView.translatesAutoresizingMaskIntoConstraints = false
+      view.insertSubview(blurView, atIndex: 0)
+      
+      var constraints = [NSLayoutConstraint]()
+      constraints.append(NSLayoutConstraint(item: blurView,
+        attribute: .Height, relatedBy: .Equal, toItem: view,
+        attribute: .Height, multiplier: 1, constant: 0))
+      constraints.append(NSLayoutConstraint(item: blurView,
+        attribute: .Width, relatedBy: .Equal, toItem: view,
+        attribute: .Width, multiplier: 1, constant: 0))
+      view.addConstraints(constraints)
+      
+      self.autoresizingMask = [.FlexibleWidth, .FlexibleLeftMargin, .FlexibleRightMargin]
+      self.setup = true
+    }
     
-    var constraints = [NSLayoutConstraint]()
-    constraints.append(NSLayoutConstraint(item: blurView,
-      attribute: .Height, relatedBy: .Equal, toItem: view,
-      attribute: .Height, multiplier: 1, constant: 0))
-    constraints.append(NSLayoutConstraint(item: blurView,
-      attribute: .Width, relatedBy: .Equal, toItem: view,
-      attribute: .Width, multiplier: 1, constant: 0))
-    view.addConstraints(constraints)
-    
-    self.autoresizingMask = [.FlexibleWidth, .FlexibleLeftMargin, .FlexibleRightMargin]
   }
   
   // Functionality
@@ -75,7 +81,6 @@ class BannerView: UIView {
   }
   
 }
-
 
 extension BannerView{
   func setupView(banner: ReachabilityBanner){
