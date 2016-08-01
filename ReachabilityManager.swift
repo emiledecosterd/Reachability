@@ -11,20 +11,20 @@ import Foundation
 // If we use notification
 let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
 
-class ReachabilityManager: Reachable {
+public class ReachabilityManager: Reachable {
   
   var reachability: AAPLReachability
   
-  var wifiOnly: Bool = false
-  var isOnWifi: Bool {
+  public var wifiOnly: Bool = false
+  public var isOnWifi: Bool {
     return reachability.currentReachabilityStatus() == ReachableViaWiFi
   }
   
   // If we want to use it as a singleton
-  static var sharedManager = ReachabilityManager()
+  static public var sharedManager = ReachabilityManager()
   
   // If we use the class with delegate pattern
-  var delegate: ReachabilityDelegate?
+  public var delegate: ReachabilityDelegate?
   
   init(){
     reachability = AAPLReachability.reachabilityForInternetConnection()
@@ -39,7 +39,7 @@ class ReachabilityManager: Reachable {
     NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
   }
   
-  func startMonitoring() {
+  public func startMonitoring() {
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReachabilityManager.reachabilityChanged(_:)), name: kReachabilityChangedNotification, object: nil)
     reachability.startNotifier()
   }

@@ -12,7 +12,7 @@ protocol Reachable {
   var reachability: AAPLReachability {get set}
 }
 
-protocol ReachabilityDelegate {
-  func reachabilityStatusChanged(status: NetworkStatus)
+public protocol ReachabilityDelegate {
+  public func reachabilityStatusChanged(status: NetworkStatus)
 }
 

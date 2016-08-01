@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkStatus: Int {
+public enum NetworkStatus: Int {
   
   case NotReachable
   case Wifi
