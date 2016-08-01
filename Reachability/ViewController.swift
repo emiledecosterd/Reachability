@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
   
   var reachabilityController: ReachabilityController! = nil
 
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
   }
   
   override func viewDidAppear(animated: Bool) {
-    reachabilityController = ReachabilityController(view: self.view)
+    reachabilityController = ReachabilityController(view: self.view, statusBar: false)
   }
 
   override func didReceiveMemoryWarning() {

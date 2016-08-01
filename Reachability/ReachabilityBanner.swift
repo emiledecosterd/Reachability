@@ -22,8 +22,8 @@ class ReachabilityBanner {
   
   var message: String {
     switch status {
-    case .NotReachable: return "No internet connection!".localized
-    case .Cellular: return "Cellular connection".localized
+    case .NotReachable: return "No network access! \nCheck your connection. ".localized
+    case .Cellular: return "Cellular connection \nThis can lead to additional costs.".localized
     case .Wifi: return "Wifi connection".localized
     }
   }

@@ -24,7 +24,7 @@ public final class ReachabilityController {
   private var bannerWidth: CGFloat {
     return UIScreen.mainScreen().bounds.size.width
   }
-  private let bannerHeight = CGFloat(64)
+  private var bannerHeight = CGFloat(44)
   
   // The view in which the banner will be displayed
   private unowned var view: UIView
@@ -54,15 +54,21 @@ public final class ReachabilityController {
     reachabilityManager.wifiOnly = true
   }
   
+  public convenience init(view: UIView, statusBar: Bool){
+    self.init(view: view)
+    if statusBar {
+      bannerHeight = CGFloat(64)
+    }
+  }
+  
   deinit{
     NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
   }
   
   private func showBanner(duration: NSTimeInterval){
-    bannerView.setupView(banner)
-    bannerView.delegate = self
     
     // Show the view with animation
+    bannerView.setupView(banner)
     view.addSubview(bannerView)
     
     UIView.animateWithDuration(0.5,
@@ -106,11 +112,5 @@ public final class ReachabilityController {
 extension ReachabilityController: ReachabilityDelegate {
   public func reachabilityStatusChanged(status: NetworkStatus) {
     banner = ReachabilityBanner(status: status)
-  }
-}
-
-extension ReachabilityController: ReachabilityBannerViewDelegate{
-  func bannerViewDidPressHide() {
-    hideBanner(true)
   }
 }

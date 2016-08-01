@@ -8,19 +8,11 @@
 
 import UIKit
 
-protocol ReachabilityBannerViewDelegate {
-  func bannerViewDidPressHide()
-}
-
 class ReachabilityBannerView: UIView {
-  
-  // Properties
-  var delegate: ReachabilityBannerViewDelegate?
   
   // GUI
   @IBOutlet var view: UIView!
   @IBOutlet weak var statusInfoLabel: UILabel!
-  @IBOutlet weak var hideButton: UIButton!
   
   
   // Initialisation
@@ -48,8 +40,7 @@ class ReachabilityBannerView: UIView {
   // Setup
   
   func setupView(banner: ReachabilityBanner){
-    // Titles
-    hideButton.titleLabel?.text = "Hide".localized
+    
     view.backgroundColor = banner.color
     statusInfoLabel.text = banner.message
     
@@ -81,12 +72,6 @@ class ReachabilityBannerView: UIView {
   override func drawRect(rect: CGRect) {
     super.drawRect(rect)
     // Implement to draw a border
-  }
-  
-  // Actions
-  @IBAction func hide(sender: AnyObject) {
-    print("Button pressed")
-    delegate?.bannerViewDidPressHide()
   }
   
 }
