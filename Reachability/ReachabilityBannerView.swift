@@ -73,6 +73,7 @@ class ReachabilityBannerView: UIView {
   
   // Functionality
   func changeFrame(frame: CGRect){
+    self.frame = frame
     self.view.frame = frame
     self.view.layoutIfNeeded()
   }

@@ -13,6 +13,6 @@ protocol Reachable {
 }
 
 public protocol ReachabilityDelegate {
-  public func reachabilityStatusChanged(status: NetworkStatus)
+  func reachabilityStatusChanged(status: NetworkStatus)
 }
 

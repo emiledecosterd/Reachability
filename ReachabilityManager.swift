@@ -14,6 +14,7 @@ let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
 public class ReachabilityManager: Reachable {
   
   var reachability: AAPLReachability
+  public var status: NetworkStatus! // Call only if startMonitoring has been called!
   
   public var wifiOnly: Bool = false
   public var isOnWifi: Bool {
@@ -42,17 +43,18 @@ public class ReachabilityManager: Reachable {
   public func startMonitoring() {
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReachabilityManager.reachabilityChanged(_:)), name: kReachabilityChangedNotification, object: nil)
     reachability.startNotifier()
+    status = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
   }
   
   @objc private func reachabilityChanged(notification: NSNotification){
     reachability = notification.object as! AAPLReachability
-    let networkStatus = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
+    status = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
     
     // Tell the delegate which is the new network status
-    delegate?.reachabilityStatusChanged(networkStatus)
+    delegate?.reachabilityStatusChanged(status)
     
     // Issue a notification so we can have multiple listeners
-    let notification = NSNotification(name: kNetworkStatusChangedNotification, object: nil, userInfo: ["status": networkStatus.rawValue])
+    let notification = NSNotification(name: kNetworkStatusChangedNotification, object: nil, userInfo: ["status": status.rawValue])
     NSNotificationCenter.defaultCenter().postNotification(notification)
     
   }
