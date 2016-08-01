@@ -29,6 +29,7 @@ class ReachabilityBannerView: UIView {
     
     NSBundle.mainBundle().loadNibNamed("ReachabilityBannerView", owner: self, options: nil)
     addSubview(self.view)
+    self.view.layoutIfNeeded()
   }
   
   override init(frame: CGRect) {
@@ -36,6 +37,7 @@ class ReachabilityBannerView: UIView {
     NSBundle.mainBundle().loadNibNamed("ReachabilityBannerView", owner: self, options: nil)
     self.view.frame = frame
     addSubview(self.view)
+    self.view.layoutIfNeeded()
   }
   
   convenience init(frame: CGRect, banner: ReachabilityBanner){
@@ -46,14 +48,33 @@ class ReachabilityBannerView: UIView {
   // Setup
   
   func setupView(banner: ReachabilityBanner){
+    // Titles
     hideButton.titleLabel?.text = "Hide".localized
     view.backgroundColor = banner.color
     statusInfoLabel.text = banner.message
+    
+    // Blur effect
+    let blurEffect = UIBlurEffect(style: .Light)
+    let blurView = UIVisualEffectView(effect: blurEffect)
+    blurView.translatesAutoresizingMaskIntoConstraints = false
+    view.insertSubview(blurView, atIndex: 0)
+    
+    var constraints = [NSLayoutConstraint]()
+    constraints.append(NSLayoutConstraint(item: blurView,
+      attribute: .Height, relatedBy: .Equal, toItem: view,
+      attribute: .Height, multiplier: 1, constant: 0))
+    constraints.append(NSLayoutConstraint(item: blurView,
+      attribute: .Width, relatedBy: .Equal, toItem: view,
+      attribute: .Width, multiplier: 1, constant: 0))
+    view.addConstraints(constraints)
+    
+    self.autoresizingMask = [.FlexibleWidth, .FlexibleLeftMargin, .FlexibleRightMargin]
   }
   
   // Functionality
   func changeFrame(frame: CGRect){
     self.view.frame = frame
+    self.view.layoutIfNeeded()
   }
   
   override func drawRect(rect: CGRect) {
@@ -63,6 +84,7 @@ class ReachabilityBannerView: UIView {
   
   // Actions
   @IBAction func hide(sender: AnyObject) {
+    print("Button pressed")
     delegate?.bannerViewDidPressHide()
   }
   

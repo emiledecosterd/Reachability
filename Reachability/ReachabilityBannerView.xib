@@ -18,13 +18,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kv-oa-wZL">
-                    <rect key="frame" x="542" y="285" width="50" height="30"/>
+                    <rect key="frame" x="542" y="560" width="50" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="FT6-df-YMj"/>
                         <constraint firstAttribute="width" constant="50" id="S0E-BU-rSx"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="Hide">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -32,8 +32,8 @@
                         <action selector="hide:" destination="-1" eventType="touchUpInside" id="zO4-Sg-6Kv"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reachability Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfb-3v-sWj">
-                    <rect key="frame" x="8" y="285" width="160" height="31"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reachability Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gfb-3v-sWj">
+                    <rect key="frame" x="8" y="559" width="160" height="31"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="160" id="1Un-KY-nhL"/>
@@ -45,10 +45,10 @@
                 </label>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="0Kv-oa-wZL" secondAttribute="bottom" constant="10" id="1KX-hn-hGa"/>
                 <constraint firstItem="Gfb-3v-sWj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="FH2-0q-Drv"/>
                 <constraint firstAttribute="trailing" secondItem="0Kv-oa-wZL" secondAttribute="trailing" constant="8" id="YXG-6p-lfO"/>
-                <constraint firstItem="Gfb-3v-sWj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hQb-Jd-A9m"/>
-                <constraint firstItem="0Kv-oa-wZL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="qWz-Xk-E7e"/>
+                <constraint firstAttribute="bottom" secondItem="Gfb-3v-sWj" secondAttribute="bottom" constant="10" id="mwp-4g-vTl"/>
             </constraints>
         </view>
     </objects>

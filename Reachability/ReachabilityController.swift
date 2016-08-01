@@ -34,6 +34,9 @@ public final class ReachabilityController {
     reachabilityManager = ReachabilityManager()
     reachabilityManager.delegate = self
     reachabilityManager.startMonitoring()
+    
+    // Respond to orientation changes
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReachabilityController.orientationChanged(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
   }
   
   public convenience init(view: UIView, wifiOnly: Bool){
@@ -41,9 +44,13 @@ public final class ReachabilityController {
     reachabilityManager.wifiOnly = true
   }
   
+  deinit{
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+  }
+  
   private func hideBanner(animated: Bool){
     if animated {
-      UIView.animateWithDuration(5, animations: {
+      UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: [.AllowUserInteraction, .BeginFromCurrentState], animations: { 
         self.bannerView.changeFrame(CGRectMake(0, 0, self.bannerWidth, 0))
         }, completion: { (ok) in
           self.bannerView.removeFromSuperview()
@@ -51,6 +58,10 @@ public final class ReachabilityController {
     }else{
       bannerView.removeFromSuperview()
     }
+  }
+  
+  @objc private func orientationChanged(notification: NSNotification){
+    self.view.layoutIfNeeded()
   }
   
 }
@@ -65,9 +76,15 @@ extension ReachabilityController: ReachabilityDelegate {
     // Show the view with animation
     view.addSubview(bannerView)
     
-    UIView.animateWithDuration(0.5) {
-      self.bannerView.changeFrame(CGRectMake(0, 0, self.bannerWidth, self.bannerHeight))
-    }
+    
+    UIView.animateWithDuration(0.5,
+                               delay: 0,
+                               usingSpringWithDamping: 0.9,
+                               initialSpringVelocity: 1,
+                               options: [.AllowUserInteraction, .BeginFromCurrentState],
+                               animations: {
+                                self.bannerView.changeFrame(CGRectMake(0, 0, self.bannerWidth, self.bannerHeight))
+      }, completion: nil)
     
     // Hide it after 2 sec
     NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(ReachabilityController.timerFinished(_:)), userInfo: true, repeats: false)
