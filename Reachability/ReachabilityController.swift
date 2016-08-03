@@ -8,27 +8,35 @@
 
 import UIKit
 
+
+// MARK: Base class
+// MARK: -
 public final class ReachabilityController {
   
-  // Reachability
-  private var reachabilityManager: ReachabilityManager
   
-  // The banner view and the corresponding model
-  private let bannerView: BannerView
-  private var banner: ReachabilityBanner!{
+  // MARK: Properties
+  
+  //Model
+  private var reachabilityManager: ReachabilityManager
+  private var banner: ReachabilityBanner! = nil{ // Created at initialisation
     didSet{
       print("Show banner should be executed")
       showBanner(3)
     }
   }
+  
+  // Views
+  private unowned var view: UIView
+  private let bannerView: BannerView
+  
+  // Helpers
   private var bannerWidth: CGFloat {
     return UIScreen.mainScreen().bounds.size.width
   }
   private var bannerHeight = CGFloat(44)
   
-  // The view in which the banner will be displayed
-  private unowned var view: UIView
   
+  // MARK: Initialisation
   public init(view: UIView){
     // Setup views
     self.view = view
@@ -64,6 +72,9 @@ public final class ReachabilityController {
   deinit{
     NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
   }
+  
+  
+  // MARK: Show and hide banner depending on reachability changes
   
   private func showBanner(duration: NSTimeInterval){
     
@@ -109,6 +120,8 @@ public final class ReachabilityController {
   
 }
 
+// MARK: - ReachabilityDelegate
+// MARK: -
 extension ReachabilityController: ReachabilityDelegate {
   public func reachabilityStatusChanged(status: NetworkStatus) {
     banner = ReachabilityBanner(status: status)
