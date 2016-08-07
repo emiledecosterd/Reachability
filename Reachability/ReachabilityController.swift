@@ -37,6 +37,11 @@ public final class ReachabilityController {
   
   
   // MARK: Initialisation
+  /**
+   * Instanciates a `ReachabilityController`.
+   *
+   * - Parameter view: The view in which to show a banner view when reachability changes. The banner will be displayed on the top of this view.
+  */
   public init(view: UIView){
     // Setup views
     self.view = view
@@ -57,11 +62,23 @@ public final class ReachabilityController {
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReachabilityController.orientationChanged(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
   }
   
+  /**
+   * Instanciates a `ReachabilityController`.
+   *
+   * - Parameter view: The view in which to show a banner view when reachability changes. The banner will be displayed on the top of this view.
+   * - Parameter wifiOnly: If we want to be informed when we use cellular connection instead of wifi.
+   */
   public convenience init(view: UIView, wifiOnly: Bool){
     self.init(view:view)
     reachabilityManager.wifiOnly = true
   }
   
+  /**
+   * Instanciates a `ReachabilityController`.
+   *
+   * - Parameter view: The view in which to show a banner view when reachability changes. The banner will be displayed on the top of this view.
+   * - Parameter statusBar: If the view contains the status bar, set `statusBar` to `true`.
+   */
   public convenience init(view: UIView, statusBar: Bool){
     self.init(view: view)
     if statusBar {

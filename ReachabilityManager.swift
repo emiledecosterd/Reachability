@@ -61,6 +61,14 @@ public class ReachabilityManager: Reachable {
     reachability = notification.object as! AAPLReachability
     status = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
     
+    // When new status is .Cellular, dont't issue a notification or a delegate call if wifiOnly is set to false. In fact we still have an internet connection and we don't care if it is not a wifi connection.
+    if !wifiOnly {
+      switch status! {
+      case .Cellular: return
+      default: break
+      }
+    }
+    
     // Tell the delegate which is the new network status
     delegate?.reachabilityStatusChanged(status)
     
