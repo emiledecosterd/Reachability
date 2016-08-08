@@ -1,17 +1,32 @@
-//
-//  ReachabilityController.swift
-//  Reachability
-//
-//  Created by Emile Décosterd on 31.07.16.
-//  Copyright © 2016 Emile Décosterd. All rights reserved.
-//
+/*
+ * Copyright (c) 2016 Emile Décosterd
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 
 import UIKit
 
 
 // MARK: Base class
 // MARK: -
-public final class ReachabilityController {
+///A class that takes care of everything related to the internet reachability
+final class ReachabilityController {
   
   
   // MARK: Properties
@@ -42,7 +57,7 @@ public final class ReachabilityController {
    *
    * - Parameter view: The view in which to show a banner view when reachability changes. The banner will be displayed on the top of this view.
   */
-  public init(view: UIView){
+  init(view: UIView){
     // Setup views
     self.view = view
     let bannerViewFrame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 0)
@@ -68,7 +83,7 @@ public final class ReachabilityController {
    * - Parameter view: The view in which to show a banner view when reachability changes. The banner will be displayed on the top of this view.
    * - Parameter wifiOnly: If we want to be informed when we use cellular connection instead of wifi.
    */
-  public convenience init(view: UIView, wifiOnly: Bool){
+  convenience init(view: UIView, wifiOnly: Bool){
     self.init(view:view)
     reachabilityManager.wifiOnly = true
   }
@@ -79,9 +94,23 @@ public final class ReachabilityController {
    * - Parameter view: The view in which to show a banner view when reachability changes. The banner will be displayed on the top of this view.
    * - Parameter statusBar: If the view contains the status bar, set `statusBar` to `true`.
    */
-  public convenience init(view: UIView, statusBar: Bool){
+  convenience init(view: UIView, statusBar: Bool){
     self.init(view: view)
     if statusBar {
+      bannerHeight = CGFloat(64)
+    }
+  }
+  
+  /**
+   * Instanciates a `ReachabilityController`.
+   *
+   * - Parameter view: The view in which to show a banner view when reachability changes. The banner will be displayed on the top of this view.
+   * - Parameter wifiOnly: If we want to be informed when we use cellular connection instead of wifi.
+   * - Parameter statusBar: If the view contains the status bar, set `statusBar` to `true`.
+   */
+  convenience init(view: UIView, wifiOnly: Bool, statusBar: Bool){
+    self.init(view: view, wifiOnly: wifiOnly)
+    if statusBar{
       bannerHeight = CGFloat(64)
     }
   }
@@ -139,8 +168,9 @@ public final class ReachabilityController {
 
 // MARK: - ReachabilityDelegate
 // MARK: -
+/// An extension of `ReachabilityController` to conform to `ReachabilityManager`'s delegate protocol
 extension ReachabilityController: ReachabilityDelegate {
-  public func reachabilityStatusChanged(status: NetworkStatus) {
+  func reachabilityStatusChanged(status: NetworkStatus) {
     banner = ReachabilityBanner(status: status)
   }
 }

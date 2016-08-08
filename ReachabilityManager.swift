@@ -1,36 +1,62 @@
-//
-//  ReachabilityManager.swift
-//  Reachability
-//
-//  Created by Emile Décosterd on 31.07.16.
-//  Copyright © 2016 Emile Décosterd. All rights reserved.
-//
+/*
+ * Copyright (c) 2016 Emile Décosterd
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 
 import Foundation
 
-// If we use notification
-public let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
+/// If we use notifications, this is the identifier for changes in the network status.
+let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
 
 
 // MARK: Class
 // MARK: -
-public class ReachabilityManager: Reachable {
+/** Class that keeps track of Reachability changes and notifies other classes of these changes. Can be used
+ *  as a singleton
+ *  with notifications: issues a notification whenever there is a change in the device's reachability
+ *  with the delegate pattern. The delegate property has to be set.
+ */
+class ReachabilityManager {
   
   // MARK: Properties
-  var reachability: AAPLReachability
-  public var status: NetworkStatus! = nil // !! First instantiated in "startMonitoring()" !! Do not use before
+  private var reachability: AAPLReachability
+  
+  /**
+   * The current network status.
+   * - Warning: First instantiated in `startMonitoring()`. Do not use before.
+  */
+  var status: NetworkStatus! = nil
   
   // Wifi
-  public var wifiOnly: Bool = false
-  public var isOnWifi: Bool {
+  /// If we want to be notified if the device is still connected to internet but not on wifi anymore.
+  var wifiOnly: Bool = false
+  /// Quickly know at any time if we are connected to a wifi network.
+  var isOnWifi: Bool {
     return reachability.currentReachabilityStatus() == ReachableViaWiFi
   }
   
-  // If we want to use it as a singleton
-  static public var sharedManager = ReachabilityManager()
+  /// If we want to use it as a singleton
+  static var sharedManager = ReachabilityManager()
   
-  // If we use the class with delegate pattern
-  public var delegate: ReachabilityDelegate?
+  /// If we use the class with delegate pattern
+  var delegate: ReachabilityDelegate?
   
   
   // MARK: Initialisation
@@ -51,7 +77,8 @@ public class ReachabilityManager: Reachable {
   
   // MARK: Monitoring
   
-  public func startMonitoring() {
+  /// Start monitoring the device's reachability. Launches all the observers.
+  func startMonitoring() {
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReachabilityManager.reachabilityChanged(_:)), name: kReachabilityChangedNotification, object: nil)
     reachability.startNotifier()
     status = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
