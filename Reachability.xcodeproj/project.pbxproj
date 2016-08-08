@@ -57,16 +57,16 @@
 		623C6DBF1D4E4CA100DAF1C4 /* ReachabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityUITests.swift; sourceTree = "<group>"; };
 		623C6DC11D4E4CA100DAF1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		623C6DCE1D4E4CD500DAF1C4 /* Reachability-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability-Bridging-Header.h"; sourceTree = "<group>"; };
-		623C6DCF1D4E4CD600DAF1C4 /* AAPLReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAPLReachability.h; path = Model/AAPL/AAPLReachability.h; sourceTree = "<group>"; };
-		623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAPLReachability.m; path = Model/AAPL/AAPLReachability.m; sourceTree = "<group>"; };
-		623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityManager.swift; path = Model/ReachabilityManager.swift; sourceTree = SOURCE_ROOT; };
-		623C6DD61D4E4EDD00DAF1C4 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Miscellaneous/Protocols.swift; sourceTree = "<group>"; };
-		623C6DD81D4E5B1500DAF1C4 /* NetworkStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkStatus.swift; path = Miscellaneous/NetworkStatus.swift; sourceTree = "<group>"; };
-		62E750E21D4E868100E5F240 /* BannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BannerView.xib; path = ../Views/BannerView.xib; sourceTree = "<group>"; };
-		62E750E41D4E898200E5F240 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerView.swift; path = ../Views/BannerView.swift; sourceTree = "<group>"; };
-		62E750E71D4E8B7E00E5F240 /* String+EDE_additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+EDE_additions.swift"; path = "Miscellaneous/Categories/String+EDE_additions.swift"; sourceTree = "<group>"; };
-		62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityBanner.swift; path = ../Model/ReachabilityBanner.swift; sourceTree = "<group>"; };
-		62E750ED1D4E91F900E5F240 /* ReachabilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityController.swift; path = ../Controllers/ReachabilityController.swift; sourceTree = "<group>"; };
+		623C6DCF1D4E4CD600DAF1C4 /* AAPLReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLReachability.h; sourceTree = "<group>"; };
+		623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLReachability.m; sourceTree = "<group>"; };
+		623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityManager.swift; path = Reachability/Model/ReachabilityManager.swift; sourceTree = SOURCE_ROOT; };
+		623C6DD61D4E4EDD00DAF1C4 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Reachability/Miscellaneous/Protocols.swift; sourceTree = "<group>"; };
+		623C6DD81D4E5B1500DAF1C4 /* NetworkStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkStatus.swift; path = Reachability/Miscellaneous/NetworkStatus.swift; sourceTree = "<group>"; };
+		62E750E21D4E868100E5F240 /* BannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BannerView.xib; path = Views/BannerView.xib; sourceTree = "<group>"; };
+		62E750E41D4E898200E5F240 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BannerView.swift; path = Views/BannerView.swift; sourceTree = "<group>"; };
+		62E750E71D4E8B7E00E5F240 /* String+EDE_additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+EDE_additions.swift"; path = "Reachability/Miscellaneous/Categories/String+EDE_additions.swift"; sourceTree = "<group>"; };
+		62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityBanner.swift; path = Model/ReachabilityBanner.swift; sourceTree = "<group>"; };
+		62E750ED1D4E91F900E5F240 /* ReachabilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityController.swift; path = Controllers/ReachabilityController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 				623C6DD01D4E4CD600DAF1C4 /* AAPLReachability.m */,
 			);
 			name = AAPL;
-			path = ..;
+			path = Model/AAPL;
 			sourceTree = "<group>";
 		};
 		623C6DD51D4E4ECB00DAF1C4 /* Miscellaneous */ = {
