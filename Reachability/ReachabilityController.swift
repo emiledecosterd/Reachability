@@ -35,7 +35,6 @@ final class ReachabilityController {
   private var reachabilityManager: ReachabilityManager
   private var banner: ReachabilityBanner! = nil{ // Created at initialisation
     didSet{
-      print("Show banner should be executed")
       showBanner(3)
     }
   }
