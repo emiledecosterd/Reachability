@@ -120,7 +120,6 @@
 			children = (
 				623C6DD51D4E4ECB00DAF1C4 /* Miscellaneous */,
 				62E750E91D4E8C4C00E5F240 /* Model */,
-				62E750E11D4E865500E5F240 /* Views */,
 				62E750EC1D4E91B200E5F240 /* Controllers */,
 				623C6D9F1D4E4CA100DAF1C4 /* AppDelegate.swift */,
 				623C6DA11D4E4CA100DAF1C4 /* ViewController.swift */,
@@ -194,6 +193,7 @@
 				623C6DCD1D4E4CAF00DAF1C4 /* AAPL */,
 				62E750EA1D4E8C5900E5F240 /* ReachabilityBanner.swift */,
 				623C6DD31D4E4EBC00DAF1C4 /* ReachabilityManager.swift */,
+				62E750E11D4E865500E5F240 /* Views */,
 			);
 			name = Model;
 			sourceTree = "<group>";
