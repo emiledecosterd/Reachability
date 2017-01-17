@@ -35,13 +35,14 @@ final class ReachabilityController {
   fileprivate var reachabilityManager: ReachabilityManager
   fileprivate var banner: ReachabilityBanner! = nil{ // Created at initialisation
     didSet{
-      showBanner(3)
+      showBannerForSeconds(3)
     }
   }
   
   // Views
   fileprivate unowned var view: UIView
   fileprivate let bannerView: BannerView
+  public var shouldShowBanner: Bool = true // Set this to false if you do not want the banner to show
   
   // Helpers
   fileprivate var bannerWidth: CGFloat {
@@ -69,7 +70,7 @@ final class ReachabilityController {
     
     banner = ReachabilityBanner(status: reachabilityManager.status)
     if banner.status != .wifi {
-      showBanner(3)
+      showBannerForSeconds(3)
     }
     
     // Respond to orientation changes
@@ -121,7 +122,10 @@ final class ReachabilityController {
   
   // MARK: Show and hide banner depending on reachability changes
   
-  fileprivate func showBanner(_ duration: TimeInterval){
+  fileprivate func showBannerForSeconds(_ duration: TimeInterval){
+    
+    // In case you do not want the banner to be shown to the user
+    if !shouldShowBanner {return}
     
     // Show the view with animation
     bannerView.setupView(banner)
@@ -148,6 +152,10 @@ final class ReachabilityController {
   }
   
   fileprivate func hideBanner(_ animated: Bool){
+    
+    // If no banner was to be shown, there will be no views to remove 
+    if !shouldShowBanner {return}
+    
     if animated {
       UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: [.allowUserInteraction, .beginFromCurrentState], animations: { 
         self.bannerView.changeFrame(CGRect(x: 0, y: 0, width: self.bannerWidth, height: 0))

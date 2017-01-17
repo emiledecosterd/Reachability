@@ -23,7 +23,7 @@
 import Foundation
 
 /// If we use notifications, this is the identifier for changes in the network status.
-let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
+let kNetworkStatusChangedNotification = "ch.ED-automation.networkStatusChanged"
 
 
 // MARK: Class
