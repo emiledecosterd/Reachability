@@ -31,8 +31,8 @@ class BannerView: UIView {
   
   // MARK: GUI
   
-  @IBOutlet private var view: UIView!
-  @IBOutlet weak private var infoLabel: UILabel!
+  @IBOutlet fileprivate var view: UIView!
+  @IBOutlet weak fileprivate var infoLabel: UILabel!
   
   
   // MARK: Initialisation
@@ -61,29 +61,29 @@ class BannerView: UIView {
   
   // MARK: Setup
   
-  private func configure(){
+  fileprivate func configure(){
     
     // Load the nib file
-    NSBundle.mainBundle().loadNibNamed("BannerView", owner: self, options: nil)
+    Bundle.main.loadNibNamed("BannerView", owner: self, options: nil)
     addSubview(self.view)
     self.view.layoutIfNeeded()
     
     // Blur effect
-    let blurEffect = UIBlurEffect(style: .Light)
+    let blurEffect = UIBlurEffect(style: .light)
     let blurView = UIVisualEffectView(effect: blurEffect)
     blurView.translatesAutoresizingMaskIntoConstraints = false
-    view.insertSubview(blurView, atIndex: 0)
+    view.insertSubview(blurView, at: 0)
     
     var constraints = [NSLayoutConstraint]()
     constraints.append(NSLayoutConstraint(item: blurView,
-      attribute: .Height, relatedBy: .Equal, toItem: view,
-      attribute: .Height, multiplier: 1, constant: 0))
+      attribute: .height, relatedBy: .equal, toItem: view,
+      attribute: .height, multiplier: 1, constant: 0))
     constraints.append(NSLayoutConstraint(item: blurView,
-      attribute: .Width, relatedBy: .Equal, toItem: view,
-      attribute: .Width, multiplier: 1, constant: 0))
+      attribute: .width, relatedBy: .equal, toItem: view,
+      attribute: .width, multiplier: 1, constant: 0))
     view.addConstraints(constraints)
     
-    self.autoresizingMask = [.FlexibleWidth, .FlexibleLeftMargin, .FlexibleRightMargin]
+    self.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
 
   }
   
@@ -93,7 +93,7 @@ class BannerView: UIView {
    * - Parameter color: The color the banner view should have.
    * - Parameter message: The text to be displayed in the view. Can be up to 2 lines.
   */
-  func setupView(color: UIColor, message: String){
+  func setupView(_ color: UIColor, message: String){
     view.backgroundColor = color
     infoLabel.text = message
   }
@@ -105,7 +105,7 @@ class BannerView: UIView {
    * Changes the view's frame. To be used in animations. Handles the resizing of the subviews.
    * - Parameter frame: The new rectangle in which the view should fit.
   */
-  func changeFrame(frame: CGRect){
+  func changeFrame(_ frame: CGRect){
     self.frame = frame
     self.view.frame = frame
     self.view.layoutIfNeeded()
@@ -117,7 +117,7 @@ class BannerView: UIView {
 // MARK: - Reachability extension
 // MARK: -
 extension BannerView{
-  func setupView(banner: ReachabilityBanner){
+  func setupView(_ banner: ReachabilityBanner){
     setupView(banner.color, message: banner.message)
   }
 }

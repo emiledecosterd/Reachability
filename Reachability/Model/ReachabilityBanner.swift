@@ -30,17 +30,17 @@ class ReachabilityBanner {
   
   var color: UIColor {
     switch status {
-    case .NotReachable: return UIColor.redColor()
-    case .Cellular: return UIColor.orangeColor()
-    case .Wifi: return UIColor.greenColor()
+    case .notReachable: return UIColor.red
+    case .cellular: return UIColor.orange
+    case .wifi: return UIColor.green
     }
   }
   
   var message: String {
     switch status {
-    case .NotReachable: return "No network access! \nCheck your connection. ".localized
-    case .Cellular: return "Cellular connection \nThis can lead to additional costs.".localized
-    case .Wifi: return "Wifi connection".localized
+    case .notReachable: return "No network access! \nCheck your connection. ".localized
+    case .cellular: return "Cellular connection \nThis can lead to additional costs.".localized
+    case .wifi: return "Wifi connection".localized
     }
   }
   

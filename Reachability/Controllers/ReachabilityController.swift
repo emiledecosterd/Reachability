@@ -32,22 +32,22 @@ final class ReachabilityController {
   // MARK: Properties
   
   //Model
-  private var reachabilityManager: ReachabilityManager
-  private var banner: ReachabilityBanner! = nil{ // Created at initialisation
+  fileprivate var reachabilityManager: ReachabilityManager
+  fileprivate var banner: ReachabilityBanner! = nil{ // Created at initialisation
     didSet{
       showBanner(3)
     }
   }
   
   // Views
-  private unowned var view: UIView
-  private let bannerView: BannerView
+  fileprivate unowned var view: UIView
+  fileprivate let bannerView: BannerView
   
   // Helpers
-  private var bannerWidth: CGFloat {
-    return UIScreen.mainScreen().bounds.size.width
+  fileprivate var bannerWidth: CGFloat {
+    return UIScreen.main.bounds.size.width
   }
-  private var bannerHeight = CGFloat(44)
+  fileprivate var bannerHeight = CGFloat(44)
   
   
   // MARK: Initialisation
@@ -59,7 +59,7 @@ final class ReachabilityController {
   init(view: UIView){
     // Setup views
     self.view = view
-    let bannerViewFrame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 0)
+    let bannerViewFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 0)
     bannerView = BannerView(frame: bannerViewFrame)
     
     // Setup manager
@@ -68,12 +68,12 @@ final class ReachabilityController {
     reachabilityManager.startMonitoring()
     
     banner = ReachabilityBanner(status: reachabilityManager.status)
-    if banner.status != .Wifi {
+    if banner.status != .wifi {
       showBanner(3)
     }
     
     // Respond to orientation changes
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReachabilityController.orientationChanged(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(ReachabilityController.orientationChanged(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
   }
   
   /**
@@ -115,42 +115,42 @@ final class ReachabilityController {
   }
   
   deinit{
-    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
   }
   
   
   // MARK: Show and hide banner depending on reachability changes
   
-  private func showBanner(duration: NSTimeInterval){
+  fileprivate func showBanner(_ duration: TimeInterval){
     
     // Show the view with animation
     bannerView.setupView(banner)
     view.addSubview(bannerView)
     
-    UIView.animateWithDuration(0.5,
+    UIView.animate(withDuration: 0.5,
                                delay: 0,
                                usingSpringWithDamping: 0.9,
                                initialSpringVelocity: 1,
-                               options: [.AllowUserInteraction, .BeginFromCurrentState],
+                               options: [.allowUserInteraction, .beginFromCurrentState],
                                animations: {
-                                self.bannerView.changeFrame(CGRectMake(0, 0, self.bannerWidth, self.bannerHeight))
+                                self.bannerView.changeFrame(CGRect(x: 0, y: 0, width: self.bannerWidth, height: self.bannerHeight))
       }, completion: { (done) in
         // Hide it after 2 sec
-        NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: #selector(ReachabilityController.timerFinished(_:)), userInfo: true, repeats: false)
+        Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(ReachabilityController.timerFinished(_:)), userInfo: true, repeats: false)
     })
     
     
   }
   
-  @objc private func timerFinished(timer: NSTimer){
+  @objc fileprivate func timerFinished(_ timer: Timer){
     timer.invalidate()
     hideBanner(true)
   }
   
-  private func hideBanner(animated: Bool){
+  fileprivate func hideBanner(_ animated: Bool){
     if animated {
-      UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: [.AllowUserInteraction, .BeginFromCurrentState], animations: { 
-        self.bannerView.changeFrame(CGRectMake(0, 0, self.bannerWidth, 0))
+      UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: [.allowUserInteraction, .beginFromCurrentState], animations: { 
+        self.bannerView.changeFrame(CGRect(x: 0, y: 0, width: self.bannerWidth, height: 0))
         }, completion: { (ok) in
           self.bannerView.removeFromSuperview()
       })
@@ -159,7 +159,7 @@ final class ReachabilityController {
     }
   }
   
-  @objc private func orientationChanged(notification: NSNotification){
+  @objc fileprivate func orientationChanged(_ notification: Notification){
     self.view.layoutIfNeeded()
   }
   
@@ -169,7 +169,7 @@ final class ReachabilityController {
 // MARK: -
 /// An extension of `ReachabilityController` to conform to `ReachabilityManager`'s delegate protocol
 extension ReachabilityController: ReachabilityDelegate {
-  func reachabilityStatusChanged(status: NetworkStatus) {
+  func reachabilityStatusChanged(_ status: NetworkStatus) {
     banner = ReachabilityBanner(status: status)
   }
 }

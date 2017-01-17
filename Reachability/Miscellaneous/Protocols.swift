@@ -27,6 +27,6 @@ protocol Reachable {
 }
 
 protocol ReachabilityDelegate {
-  func reachabilityStatusChanged(status: NetworkStatus)
+  func reachabilityStatusChanged(_ status: NetworkStatus)
 }
 

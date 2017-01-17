@@ -27,20 +27,20 @@ import Foundation
 public enum NetworkStatus: Int {
   
   /// The device is not connected to any network and is not reachable.
-  case NotReachable
+  case notReachable
   /// The device is connected to a wifi network. Internet available.
-  case Wifi
+  case wifi
   /// The device is connected to a cellular network (Edge, 3G, 4G/LTE, etc.)
-  case Cellular
+  case cellular
   
   
   /// Convenience to instantiate from Apple's Network status enumeration (Obj-C)
   init(networkStatus: AAPLNetworkStatus){
     switch networkStatus.rawValue {
-    case 0: self = .NotReachable
-    case 1: self = .Wifi
-    case 2: self = .Cellular
-    default: self = .NotReachable
+    case 0: self = .notReachable
+    case 1: self = .wifi
+    case 2: self = .cellular
+    default: self = .notReachable
     }
   }
     

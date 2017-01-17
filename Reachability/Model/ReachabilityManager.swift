@@ -36,7 +36,7 @@ let kNetworkStatusChangedNotification = "com.ED-automation.networkStatusChanged"
 class ReachabilityManager {
   
   // MARK: Properties
-  private var reachability: AAPLReachability
+  fileprivate var reachability: AAPLReachability
   
   /**
    * The current network status.
@@ -62,7 +62,7 @@ class ReachabilityManager {
   // MARK: Initialisation
   
   init(){
-    reachability = AAPLReachability.reachabilityForInternetConnection()
+    reachability = AAPLReachability.forInternetConnection()
   }
   
   convenience init(wifiOnly: Bool){
@@ -71,7 +71,7 @@ class ReachabilityManager {
   }
   
   deinit{
-    NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.reachabilityChanged, object: nil)
   }
   
   
@@ -79,19 +79,19 @@ class ReachabilityManager {
   
   /// Start monitoring the device's reachability. Launches all the observers.
   func startMonitoring() {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReachabilityManager.reachabilityChanged(_:)), name: kReachabilityChangedNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(ReachabilityManager.reachabilityChanged(_:)), name: NSNotification.Name.reachabilityChanged, object: nil)
     reachability.startNotifier()
     status = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
   }
   
-  @objc private func reachabilityChanged(notification: NSNotification){
+  @objc fileprivate func reachabilityChanged(_ notification: Notification){
     reachability = notification.object as! AAPLReachability
     status = NetworkStatus(networkStatus: reachability.currentReachabilityStatus() as AAPLNetworkStatus)
     
     // When new status is .Cellular, dont't issue a notification or a delegate call if wifiOnly is set to false. In fact we still have an internet connection and we don't care if it is not a wifi connection.
     if !wifiOnly {
       switch status! {
-      case .Cellular: return
+      case .cellular: return
       default: break
       }
     }
@@ -100,8 +100,8 @@ class ReachabilityManager {
     delegate?.reachabilityStatusChanged(status)
     
     // Issue a notification so we can have multiple listeners
-    let notification = NSNotification(name: kNetworkStatusChangedNotification, object: nil, userInfo: ["status": status.rawValue])
-    NSNotificationCenter.defaultCenter().postNotification(notification)
+    let notification = Notification(name: Notification.Name(rawValue: kNetworkStatusChangedNotification), object: nil, userInfo: ["status": status.rawValue])
+    NotificationCenter.default.post(notification)
     
   }
   
